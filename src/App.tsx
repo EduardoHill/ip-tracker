@@ -27,10 +27,8 @@ export function App() {
   const API_KEY = 'at_mPnLDnsv4sQx0dUgfPKlfDNjrOEsE'
   const [ip, setIp] = useState('')
 
-  // Estado data inicia como null (sem dados)
   const [data, setData] = useState<any>(null)
 
-  // Localização padrão para o mapa (ex: São Paulo)
   const defaultPosition = { lat: -23.55, lng: -46.63 }
 
   const fetchIpInfo = async () => {
@@ -66,29 +64,28 @@ export function App() {
       </header>
 
       <main className='relative flex flex-col h-[70%] w-full'>
-        {/* Card de informações SEMPRE aparece */}
-        <div className='w-[90%] max-w-6xl bg-white absolute z-20 rounded-2xl flex p-10 top-[-60px] left-1/2 transform -translate-x-1/2 gap-7 shadow-lg'>
-          <div className='flex flex-col border-r border-gray-300 w-1/4'>
+        <div className='w-[90%] max-w-6xl bg-white absolute z-20 rounded-2xl flex flex-col sm:flex-row p-10 top-[-60px] left-1/2 transform -translate-x-1/2 gap-7 shadow-lg'>
+          <div className='flex flex-col items-center sm:border-r border-gray-300 w-full sm:w-1/4'>
             <h3 className='text-gray-400 font-bold'>IP ADDRESS</h3>
-            <h1 className='text-2xl font-semibold'>{data?.ip || '--'}</h1>
+            <h1 className='sm:text-2xl  font-semibold'>{data?.ip || '--'}</h1>
           </div>
-          <div className='flex flex-col border-r border-gray-300 w-1/4'>
+          <div className='flex flex-col items-center sm:border-r border-gray-300 w-full sm:w-1/4'>
             <h3 className='text-gray-400 font-bold'>LOCATION</h3>
-            <h1 className='text-2xl font-semibold'>
+            <h1 className='sm:text-2xl font-semibold'>
               {data
                 ? `${data.location.city}, ${data.location.region} ${data.location.postalCode}`
                 : '--'}
             </h1>
           </div>
-          <div className='flex flex-col border-r border-gray-300 w-1/4'>
+          <div className='flex flex-col items-center sm:border-r border-gray-300 w-full sm:w-1/4'>
             <h3 className='text-gray-400 font-bold'>TIMEZONE</h3>
-            <h1 className='text-2xl font-semibold'>
+            <h1 className='sm:text-2xl  font-semibold'>
               {data ? `UTC ${data.location.timezone}` : '--'}
             </h1>
           </div>
-          <div className='flex flex-col w-1/4'>
+          <div className='flex flex-col items-center  w-full sm:w-1/4'>
             <h3 className='text-gray-400 font-bold'>ISP</h3>
-            <h1 className='text-2xl font-semibold'>{data?.isp || '--'}</h1>
+            <h1 className='sm:text-2xl  font-semibold'>{data?.isp || '--'}</h1>
           </div>
         </div>
 
@@ -117,7 +114,6 @@ export function App() {
               <Popup>{data ? 'Localização do IP' : 'Localização padrão'}</Popup>
             </Marker>
 
-            {/* Centraliza o mapa se houver dados novos */}
             <RecenterMap
               lat={data?.location.lat || defaultPosition.lat}
               lng={data?.location.lng || defaultPosition.lng}
