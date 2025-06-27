@@ -24,7 +24,7 @@ function RecenterMap({ lat, lng }: { lat: number; lng: number }) {
 }
 
 export function App() {
-  const API_KEY = 'at_mPnLDnsv4sQx0dUgfPKlfDNjrOEsE'
+  const API_KEY = import.meta.env.VITE_GEO_API_KEY
   const [ip, setIp] = useState('')
 
   const [data, setData] = useState<any>(null)
