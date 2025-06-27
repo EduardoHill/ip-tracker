@@ -12,6 +12,27 @@ export function App() {
           </button>
         </div>
       </header>
+      <main>
+        <div>
+          <div>
+            <h3>IP ADDRESS</h3>
+            <h1>192.212.174.101</h1>
+          </div>
+          <div>
+            <h3>IP ADDRESS</h3>
+            <h1>192.212.174.101</h1>
+          </div>
+          <div>
+            <h3>IP ADDRESS</h3>
+            <h1>192.212.174.101</h1>
+          </div>
+          <div>
+            <h3>IP ADDRESS</h3>
+            <h1>192.212.174.101</h1>
+          </div>
+        </div>
+        <img src='' alt='' />
+      </main>
     </div>
   )
 }
