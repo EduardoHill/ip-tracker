@@ -3,7 +3,7 @@ import Arrow from './images/icon-arrow.svg'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import Icon from '/home/eduardo/ip-tracker/src/images/icon-location.svg'
+import Icon from './images/icon-location.svg'
 
 const customIcon = new L.Icon({
   iconUrl: Icon,
